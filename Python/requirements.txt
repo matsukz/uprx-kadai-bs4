@@ -1,0 +1,5 @@
+requests
+selenium
+BeautifulSoup4
+python-dotenv
+discord-webhook

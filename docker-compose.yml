@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  #seleniumのコンテナについて
+  sele_selenium:
+    image: selenium/standalone-chrome:latest
+
+    shm_size: 2gb     #メモリ上限
+    ports:
+      #ブラウザの表示は7900に接続
+      - 7900:7900      
+      - 4444:4444
+
+  sele_python:
+    build: ./Python
+    volumes: 
+      - ./python/src:/src
+    command: python3 app.py
+    tty: true
+    depends_on:
+      - sele_selenium
