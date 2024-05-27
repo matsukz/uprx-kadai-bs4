@@ -10,7 +10,6 @@ load_dotenv()
 
 from login import login_uprx
 
-from getscript import uprx_getscript
 from get_task import uprx_get_task
 
 options = webdriver.ChromeOptions()
@@ -29,8 +28,6 @@ login_uprx(
 )
 
 time.sleep(3)
-
-uprx_getscript(driver)
 
 kadai_list = uprx_get_task(driver)
 if kadai_list == {}:
