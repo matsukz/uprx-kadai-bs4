@@ -8,9 +8,12 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+load_dotenv()
+
 from login import login_uprx
 from get_task import uprx_get_task
 
+options = webdriver.ChromeOptions()
 options = webdriver.ChromeOptions()
 driver = webdriver.Remote(
              command_executor = 'http://sele_selenium:4444/wd/hub',
